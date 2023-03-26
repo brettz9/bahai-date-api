@@ -24,6 +24,7 @@ function createDateObject (dte, {
   const luxonDate = luxon.DateTime.fromObject(dte).setZone(
     timezoneId
   );
+
   return [
     luxonDate,
     new LocalBadiDate(luxonDate, latitude, longitude, timezoneId)
@@ -134,6 +135,8 @@ const getTodayJSON = function (dateObj = {}) {
         year: nowBadi.badiDate.year,
         month: nowBadi.badiDate.month,
         day: nowBadi.badiDate.day,
+        start: nowBadi.start,
+        end: nowBadi.end,
         month_name: nowBadi.badiDate.format('MM+'),
         timezone_id: nowBadi.timezoneId
       },
@@ -228,6 +231,8 @@ const getDate = function (dateObj) {
         year: nowBadi.badiDate.year,
         month: nowBadi.badiDate.month,
         day: nowBadi.badiDate.day,
+        start: nowBadi.start,
+        end: nowBadi.end,
         month_name: nowBadi.badiDate.format('MM+'),
         timezone_id: nowBadi.timezoneId
       },
